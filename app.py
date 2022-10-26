@@ -18,7 +18,13 @@ def generate_list(count):
 def main():
     number = int(input("Enter number of elements in list: "))
     multiples = generate_list(number)
-    print(multiples)
+
+    for number in range(2, number):
+        result = (2 ** number) - 1
+        if multiples[number - 1] % result == 0:
+            print(f"{result} PRIME")
+        else:
+            print(f"{result} NOT PRIME")
 
 if __name__ == "__main__":
     main()
